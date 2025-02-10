@@ -32,5 +32,7 @@ W wypadku mnożenia i dodawania daj użytkownikowi możliwość wpisania większ
 np. możesz dodać do siebie trzy i więcej liczb.
 """
 
-def calc(num1, num2):
-    pass
+def calc():
+    action = input("\nWhat would you like to do? 1-Sum, 2-Subtract, 3-Multiply or 4-Divide?\n*Please enter a number corresponding to action: " )
+
+calc()
