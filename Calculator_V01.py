@@ -31,3 +31,6 @@ Sprawdzaj, czy podana wartość na pewno jest liczbą.
 W wypadku mnożenia i dodawania daj użytkownikowi możliwość wpisania większej ilości argumentów niż tylko dwa,
 np. możesz dodać do siebie trzy i więcej liczb.
 """
+
+def calc(num1, num2):
+    pass
