@@ -32,7 +32,30 @@ W wypadku mnożenia i dodawania daj użytkownikowi możliwość wpisania większ
 np. możesz dodać do siebie trzy i więcej liczb.
 """
 
+import sys
+import logging
+logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+math_operations = {1: "sum", 2: "subtract", 3: "multiply", 4: "divide"}
+
+
 def calc():
-    action = input("\nWhat would you like to do? 1-Sum, 2-Subtract, 3-Multiply or 4-Divide?\n*Please enter a number corresponding to action: " )
+    action = int(input("\nWhat would you like to do? 1-Sum, 2-Subtract, 3-Multiply or 4-Divide?\n*Please enter a number corresponding to action: "))
+    num_1 = float(input("Enter the first value to %s: " % math_operations.get(action)))
+    num_2 = float(input("Enter the second value: "))
+
+    result = 0
+    if action == 1:
+        result = num_1 + num_2
+    elif action == 2:
+        result = num_1 - num_2
+    elif action == 3:
+        result = num_1 * num_2
+    elif action == 4:
+        result = num_1 / num_2
+
+    logging.debug(f"Now I will {math_operations.get(action)} numbers: {num_1} and {num_2} ")
+
+    print(f"The result is - {result}")
+
 
 calc()
