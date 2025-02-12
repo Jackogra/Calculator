@@ -31,18 +31,24 @@ Sprawdzaj, czy podana wartość na pewno jest liczbą.
 W wypadku mnożenia i dodawania daj użytkownikowi możliwość wpisania większej ilości argumentów niż tylko dwa,
 np. możesz dodać do siebie trzy i więcej liczb.
 """
-
+#import packages
 import sys
 import logging
+
+#configure logging
 logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+
+#define aritmethical operators
 math_operations = {1: "sum", 2: "subtract", 3: "multiply", 4: "divide"}
 
-
 def calc():
+    #prompt to determine operation user wants to run
     action = int(input("\nWhat would you like to do? 1-Sum, 2-Subtract, 3-Multiply or 4-Divide?\n*Please enter a number corresponding to action: "))
+    #prompt to get operators from user
     num_1 = float(input("Enter the first value to %s: " % math_operations.get(action)))
     num_2 = float(input("Enter the second value: "))
 
+    #Performing calculation
     result = 0
     if action == 1:
         result = num_1 + num_2
@@ -53,8 +59,10 @@ def calc():
     elif action == 4:
         result = num_1 / num_2
 
+    #operation log
     logging.debug(f"Now I will {math_operations.get(action)} numbers: {num_1} and {num_2} ")
 
+    #printing the operation result
     print(f"The result is - {result}")
 
 
