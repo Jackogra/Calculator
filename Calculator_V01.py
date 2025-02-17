@@ -66,4 +66,5 @@ def calc():
     print(f"The result is - {result}")
 
 
-calc()
+if __name__ == "__main__":
+    calc()
